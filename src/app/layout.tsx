@@ -1,4 +1,5 @@
 import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -29,9 +30,11 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				{children}
-				<Toaster position="top-center" richColors />
-				{/* position : top-left, top-right, bottom-left, bottom-right, bottom-center */}
+				<TooltipProvider delayDuration={200}>
+					{children}
+					<Toaster position="top-center" richColors />
+					{/* position : top-left, top-right, bottom-left, bottom-right, bottom-center */}
+				</TooltipProvider>
 			</body>
 		</html>
 	);
