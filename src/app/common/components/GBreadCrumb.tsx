@@ -9,45 +9,53 @@ import {
 	BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import Link from "next/link";
+import React from "react";
 
 export interface BreadcrumbRoute {
-	label?: string;
+	label: string;
 	href?: string;
 }
 
 interface GBreadcrumbProps {
 	items: BreadcrumbRoute[];
 	className?: string;
+	separator?: React.ReactNode;
 }
 
-const GBreadcrumb = ({ items, className }: GBreadcrumbProps) => {
+const GBreadcrumb = ({ items, className, separator }: GBreadcrumbProps) => {
 	const lastIndex = items.length - 1;
 
 	return (
 		<Breadcrumb className={className}>
 			<BreadcrumbList>
-				{items?.map((item, index) => (
-					<div key={index} className="flex items-center text-white">
-						<BreadcrumbItem>
-							{index === lastIndex || !item.href ? (
-								<BreadcrumbPage className="text-white">
-									{item.label}
-								</BreadcrumbPage>
-							) : (
-								<BreadcrumbLink asChild className="">
-									<Link
-										href={item.href}
-										className="hover:underline-none hover:text-inherit text-gray-400"
-									>
+				{items.map((item, index) => {
+					const isLast = index === items.length - 1;
+					return (
+						<React.Fragment key={index}>
+							<BreadcrumbItem>
+								{isLast || !item.href ? (
+									<BreadcrumbPage className="text-black">
 										{item.label}
-									</Link>
-								</BreadcrumbLink>
+									</BreadcrumbPage>
+								) : (
+									<BreadcrumbLink asChild>
+										<Link
+											href={item.href}
+											className="text-gray-400 hover:text-gray-700 hover:no-underline"
+										>
+											{item.label}
+										</Link>
+									</BreadcrumbLink>
+								)}
+							</BreadcrumbItem>
+							{!isLast && (
+								<BreadcrumbSeparator>
+									{separator ?? <span className="text-gray-500">/</span>}
+								</BreadcrumbSeparator>
 							)}
-						</BreadcrumbItem>
-
-						{index < lastIndex && <BreadcrumbSeparator />}
-					</div>
-				))}
+						</React.Fragment>
+					);
+				})}
 			</BreadcrumbList>
 		</Breadcrumb>
 	);
