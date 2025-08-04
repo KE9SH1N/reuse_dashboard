@@ -1,7 +1,7 @@
 "use client";
+import ReactTableV1 from "@/app/dtable/components/ReactTableV1";
 import { ColumnDef } from "@tanstack/react-table";
 import { useState } from "react";
-import ReactTableV1 from "./components/ReactTableV1";
 type User = {
 	id: string;
 	name: string;
@@ -49,7 +49,7 @@ function generateUsers(count: number): User[] {
 
 const users = generateUsers(100);
 
-const page = () => {
+const DataTableV1 = () => {
 	const [sortBy, setSortBy] = useState<string | undefined>(undefined);
 	const [orderBy, setOrderBy] = useState<"ASC" | "DESC">("ASC");
 	const [filterSearchText, setFilterSearchText] = useState("");
@@ -124,4 +124,4 @@ const page = () => {
 	);
 };
 
-export default page;
+export default DataTableV1;

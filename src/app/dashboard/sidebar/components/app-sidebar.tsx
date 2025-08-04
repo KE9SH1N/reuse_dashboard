@@ -52,21 +52,25 @@ const data = {
 	],
 	navMain: [
 		{
-			title: "Playground",
+			title: "Data Table",
 			url: "#",
 			icon: SquareTerminal,
 			isActive: true,
 			items: [
 				{
-					title: "History",
-					url: "#",
+					title: "React Table V1",
+					url: "/routes/dashboard/datatable",
 				},
+			],
+		},
+		{
+			title: "Form",
+			url: "#",
+			icon: SquareTerminal,
+			isActive: true,
+			items: [
 				{
-					title: "Starred",
-					url: "#",
-				},
-				{
-					title: "Settings",
+					title: "Table",
 					url: "#",
 				},
 			],
@@ -86,6 +90,18 @@ const data = {
 				},
 				{
 					title: "Quantum",
+					url: "#",
+				},
+			],
+		},
+		{
+			title: "Toaster",
+			url: "#",
+			icon: SquareTerminal,
+			isActive: true,
+			items: [
+				{
+					title: "Table",
 					url: "#",
 				},
 			],
