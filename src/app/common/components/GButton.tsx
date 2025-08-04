@@ -12,14 +12,14 @@ const GButton = ({
 	className,
 	isLoading = false,
 	disabled,
-	type = "button", // ✅ default type set here
+	type = "button",
 	...props
 }: GButtonProps) => {
 	return (
 		<Button
 			className={cn("rounded font-medium", className)}
 			disabled={disabled || isLoading}
-			type={type} // ✅ explicitly typed
+			type={type}
 			{...props}
 		>
 			{isLoading ? "Loading..." : children}

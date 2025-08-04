@@ -1,5 +1,6 @@
 "use client";
 
+import { ModeToggle } from "@/app/common/components/ModeToggle";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { usePathname } from "next/navigation";
@@ -21,11 +22,17 @@ const DashboardHeader = () => {
 	});
 
 	return (
-		<header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
-			<div className="flex items-center gap-2 px-4">
-				<SidebarTrigger className="-ml-1" />
-				<Separator orientation="vertical" className="mr-2 h-4" />
-				<GBreadcrumb items={breadcrumbItems} />
+		<header className="flex h-16 shrink-0 items-center transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 border-b">
+			<div className="flex w-full items-center justify-between px-4">
+				{/* left section */}
+				<div className="flex items-center gap-2">
+					<SidebarTrigger className="-ml-1" />
+					<Separator orientation="vertical" className="h-4" />
+					<GBreadcrumb items={breadcrumbItems} />
+				</div>
+
+				{/* right section */}
+				<ModeToggle />
 			</div>
 		</header>
 	);

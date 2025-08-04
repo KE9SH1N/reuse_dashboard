@@ -74,26 +74,15 @@
 	}
 }
 
+.hidden-default-arrow svg:not(.custom-icon-wrapper svg) {
+	display: none;
+}
+
 @layer base {
 	* {
 		@apply border-border;
 	}
 	body {
-		@apply bg-black text-foreground text-white;
-	}
-}
-
-.hidden-default-arrow svg:not(.custom-icon-wrapper svg) {
-	display: none;
-}
-
-
-
-@layer base {
-  * {
-    @apply border-border;
-	}
-  body {
-    @apply bg-background text-foreground;
+		@apply bg-background text-foreground;
 	}
 }

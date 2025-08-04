@@ -34,14 +34,12 @@ const GBreadcrumb = ({ items, className, separator }: GBreadcrumbProps) => {
 						<React.Fragment key={index}>
 							<BreadcrumbItem>
 								{isLast || !item.href ? (
-									<BreadcrumbPage className="text-black">
-										{item.label}
-									</BreadcrumbPage>
+									<BreadcrumbPage className="">{item.label}</BreadcrumbPage>
 								) : (
 									<BreadcrumbLink asChild>
 										<Link
 											href={item.href}
-											className="text-gray-400 hover:text-gray-700 hover:no-underline"
+											className="hover:text-gray-700 hover:no-underline"
 										>
 											{item.label}
 										</Link>
@@ -50,7 +48,7 @@ const GBreadcrumb = ({ items, className, separator }: GBreadcrumbProps) => {
 							</BreadcrumbItem>
 							{!isLast && (
 								<BreadcrumbSeparator>
-									{separator ?? <span className="text-gray-500">/</span>}
+									{separator ?? <span className="">/</span>}
 								</BreadcrumbSeparator>
 							)}
 						</React.Fragment>
