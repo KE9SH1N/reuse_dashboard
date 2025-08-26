@@ -97,10 +97,10 @@ const DataTableV1 = () => {
 					footerColumns={[]} // columns to show in footer
 				/>
 			</div>
-			<h3 className="mt-4 font-semibold">Selected Data</h3>
+			{/* <h3 className="mt-4 font-semibold">Selected Data</h3>
 			<pre className="bg-gray-100 p-2 rounded text-black">
 				{JSON.stringify(selectedRowData, null, 2)}
-			</pre>
+			</pre> */}
 		</div>
 	);
 };

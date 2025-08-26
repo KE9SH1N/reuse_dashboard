@@ -147,7 +147,7 @@ const ReactTableV1: FC<IDataTableProps<any>> = ({
 					{table.getHeaderGroups().map((headerGroup) => (
 						<TableRow key={headerGroup.id}>
 							{showRowCheck && (
-								<TableHead>
+								<TableHead className="">
 									<Checkbox
 										checked={table
 											.getRowModel()
