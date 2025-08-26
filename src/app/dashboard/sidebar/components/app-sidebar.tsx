@@ -52,8 +52,20 @@ const data = {
 	],
 	navMain: [
 		{
-			title: "Data Table",
+			title: "UI",
 			url: "#",
+			icon: SquareTerminal,
+			isActive: true,
+			items: [
+				{
+					title: "Input",
+					url: "/routes/1",
+				},
+			],
+		},
+		{
+			title: "Data Table",
+			url: "",
 			icon: SquareTerminal,
 			isActive: true,
 			items: [
@@ -105,6 +117,20 @@ const data = {
 					url: "#",
 				},
 			],
+		},
+		{
+			title: "Utility",
+			url: "/routes/dashboard/utility",
+			icon: SquareTerminal,
+			isActive: true,
+			items: [],
+		},
+		{
+			title: "Data Display",
+			url: "/routes/dashboard/data-display",
+			icon: SquareTerminal,
+			isActive: true,
+			items: [],
 		},
 		{
 			title: "Documentation",

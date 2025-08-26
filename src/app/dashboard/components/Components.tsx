@@ -1,4 +1,4 @@
-import { ModeToggle } from "@/app/common/components/ModeToggle";
+import { ModeToggle } from "@/app/common/components/layout/ModeToggle";
 
 const Components = () => {
 	return (

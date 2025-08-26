@@ -1,5 +1,6 @@
 "use client";
 import ReactTableV1 from "@/app/dtable/components/ReactTableV1";
+import { usePagination } from "@/hooks/custom-hooks/usePaginationHandlers";
 import { ColumnDef } from "@tanstack/react-table";
 import { useState } from "react";
 type User = {
@@ -56,33 +57,13 @@ const DataTableV1 = () => {
 	const [rowSelection, setRowSelection] = useState<Record<string, boolean>>({});
 	const [selectedRowData, setSelectedRowData] = useState([{}]);
 
-	// Pagination example state
-	const [params, setParams] = useState({
-		page: 1,
-		limit: 10,
-		total: users?.length,
-	});
-
 	// Pagination handlers
-	const goToNextPage = () => {
-		if (params.page < Math.ceil(params.total / params.limit)) {
-			setParams({ ...params, page: params.page + 1 });
-		}
-	};
-
-	const goToPreviousPage = () => {
-		if (params.page > 1) {
-			setParams({ ...params, page: params.page - 1 });
-		}
-	};
-
-	const setPageRange = (limit: number) => {
-		setParams({ ...params, limit, page: 1 }); // reset to first page
-	};
-
-	const setPage = (page: number) => {
-		setParams({ ...params, page });
-	};
+	const { params, goToNextPage, goToPreviousPage, setPageRange, setPage } =
+		usePagination({
+			page: 1,
+			limit: 10,
+			total: users.length,
+		});
 
 	// Optional: Handle selected rows
 	const setSelectedRows = (rows: User[]) => {

@@ -3,7 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import type { Metadata } from "next";
 
 import localFont from "next/font/local";
-import { ThemeProvider } from "./common/components/theme-provider";
+import { ThemeProvider } from "../providers/theme-provider";
 import "./globals.css";
 
 const geistSans = localFont({

@@ -1,17 +1,20 @@
 "use client";
 import { showToast } from "@/lib/toast.util";
 import { useState } from "react";
-import GAlertDialog from "./common/components/GAlertDialog";
-import GBreadcrumb, { BreadcrumbRoute } from "./common/components/GBreadCrumb";
-import GButton from "./common/components/GButton";
-import GCheckbox from "./common/components/GCheckbox";
-import GCombobox, { ComboboxOption } from "./common/components/GCombobox";
-import GDatePicker from "./common/components/GDatePicker";
-import { default as GLabelInput } from "./common/components/GInput";
-import GRadioGroup from "./common/components/GRadioGroup";
-import GSelect, { SelectOption } from "./common/components/GSelect";
-import GTextArea from "./common/components/GTextArea";
-import GTooltipButton from "./common/components/GTooltipButton";
+import GAlertDialog from "./common/components/ui/GAlertDialog";
+import GBreadcrumb, {
+	BreadcrumbRoute,
+} from "./common/components/ui/GBreadCrumb";
+import GButton from "./common/components/ui/GButton";
+import GCheckbox from "./common/components/ui/GCheckbox";
+import GCombobox, { ComboboxOption } from "./common/components/ui/GCombobox";
+import GDatePicker from "./common/components/ui/GDatePicker";
+import { default as GLabelInput } from "./common/components/ui/GInput";
+import GRadioGroup from "./common/components/ui/GRadioGroup";
+import GSelect, { SelectOption } from "./common/components/ui/GSelect";
+import GTextArea from "./common/components/ui/GTextArea";
+import GTooltipButton from "./common/components/ui/GTooltipButton";
+import GSeparator from "./common/components/utility/GSeparator";
 
 const frameworkOptions: ComboboxOption[] = [
 	{ label: "Next.js", value: "next.js" },
@@ -125,7 +128,6 @@ export default function Home() {
 					Loading...
 				</GButton>
 			</div>
-
 			<div className="mt-5 p-6">
 				<GLabelInput
 					id="email"
@@ -150,7 +152,6 @@ export default function Home() {
 					// description="You must be over 18."
 				/>
 			</div>
-
 			<div className="p-6">
 				<GCheckbox
 					id="notify"
@@ -159,7 +160,6 @@ export default function Home() {
 					onChange={setEnabled}
 				/>
 			</div>
-
 			<div className="p-6">
 				<GCombobox
 					options={frameworkOptions}
@@ -234,6 +234,37 @@ export default function Home() {
 					itemClassName="bg-gray-100 p-2 rounded"
 					labelClassName="text-sm text-gray-700"
 				/>
+			</div>
+			{/* vertical */}
+			<div className="flex items-center space-x-4 p-6">
+				<div>Blog</div>
+				<GSeparator orientation="vertical" className="h-5" />
+				<div>Docs</div>
+				<GSeparator orientation="vertical" className="h-5" />
+				<div>Source</div>
+			</div>
+			{/* horizontal  */}
+			<div className="flex flex-col p-6">
+				{/* Columns */}
+				<div className="flex justify-start space-x-8">
+					<div>Blog</div>
+					<div>Docs</div>
+					<div>Source</div>
+				</div>
+
+				{/* Single horizontal line under all columns */}
+				<GSeparator orientation="horizontal" className="my-2" />
+			</div>
+			<div className="flex flex-col space-y-4 p-6">
+				{["Blog", "Docs", "Source"].map((item, index) => (
+					<div key={index} className="flex flex-col items-start">
+						<div className="text-left">{item}</div>
+						<GSeparator
+							orientation="horizontal"
+							className="w-12 h-px bg-gray-400 my-1"
+						/>
+					</div>
+				))}
 			</div>
 		</div>
 	);
