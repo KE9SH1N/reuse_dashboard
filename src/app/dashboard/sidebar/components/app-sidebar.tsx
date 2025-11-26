@@ -71,7 +71,7 @@ const data = {
 			items: [
 				{
 					title: "React Table V1",
-					url: "/routes/dashboard/datatable",
+					url: "/dashboard/datatable",
 				},
 			],
 		},
@@ -120,14 +120,14 @@ const data = {
 		},
 		{
 			title: "Utility",
-			url: "/routes/dashboard/utility",
+			url: "/dashboard/utility",
 			icon: SquareTerminal,
 			isActive: true,
 			items: [],
 		},
 		{
 			title: "Data Display",
-			url: "/routes/dashboard/data-display",
+			url: "/dashboard/data-display",
 			icon: SquareTerminal,
 			isActive: true,
 			items: [],
