@@ -9,7 +9,6 @@ import GRadioGroup from "./common/ui/GRadioGroup";
 import GSelect, { SelectOption } from "./common/ui/GSelect";
 import GTextArea from "./common/ui/GTextArea";
 import GTooltipButton from "./common/ui/GTooltipButton";
-import GSeparator from "./common/utility/GSeparator";
 
 const frameworkOptions: ComboboxOption[] = [
 	{ label: "Next.js", value: "next.js" },
@@ -131,37 +130,6 @@ export default function Home() {
 					itemClassName="bg-gray-100 p-2 rounded"
 					labelClassName="text-sm text-gray-700"
 				/>
-			</div>
-			{/* vertical */}
-			<div className="flex items-center space-x-4 p-6">
-				<div>Blog</div>
-				<GSeparator orientation="vertical" className="h-5" />
-				<div>Docs</div>
-				<GSeparator orientation="vertical" className="h-5" />
-				<div>Source</div>
-			</div>
-			{/* horizontal  */}
-			<div className="flex flex-col p-6">
-				{/* Columns */}
-				<div className="flex justify-start space-x-8">
-					<div>Blog</div>
-					<div>Docs</div>
-					<div>Source</div>
-				</div>
-
-				{/* Single horizontal line under all columns */}
-				<GSeparator orientation="horizontal" className="my-2" />
-			</div>
-			<div className="flex flex-col space-y-4 p-6">
-				{["Blog", "Docs", "Source"].map((item, index) => (
-					<div key={index} className="flex flex-col items-start">
-						<div className="text-left">{item}</div>
-						<GSeparator
-							orientation="horizontal"
-							className="w-12 h-px bg-gray-400 my-1"
-						/>
-					</div>
-				))}
 			</div>
 		</div>
 	);

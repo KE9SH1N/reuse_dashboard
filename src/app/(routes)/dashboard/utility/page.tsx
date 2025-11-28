@@ -4,6 +4,7 @@ import DashboardLayout from "@/app/common/dashboard_layout/layout/DashboardLayou
 import GClipboardButton from "@/app/common/utility/GClipboardButton";
 import GProgress from "@/app/common/utility/GProgress";
 import GSectionHeader from "@/app/common/utility/GSectionHeader";
+import GSeparator from "@/app/common/utility/GSeparator";
 import GSwitch from "@/app/common/utility/GSwitch";
 import { useState } from "react";
 
@@ -56,6 +57,54 @@ const page = () => {
 					<GProgress value={70} variant="success" className="w-60" />
 					<GProgress value={30} variant="warning" animated />
 					<GProgress value={90} variant="destructive" />
+				</div>
+
+				{/* vertical */}
+				<GSectionHeader
+					title="Separators [Vertical]"
+					// subtitle="Last 30 orders in the system"
+					// className="mb-6"
+					titleClass="text-xl font-bold"
+					subtitleClass="text-gray-500 dark:text-gray-300"
+				/>
+				<div className="flex items-center space-x-4 p-6">
+					<div>Blog</div>
+					<GSeparator orientation="vertical" className="h-5" />
+					<div>Docs</div>
+					<GSeparator orientation="vertical" className="h-5" />
+					<div>Source</div>
+				</div>
+
+				{/* horizontal */}
+				<GSectionHeader
+					title="Separators [Horizontal]"
+					// subtitle="Last 30 orders in the system"
+					// className="mb-6"
+					titleClass="text-xl font-bold"
+					subtitleClass="text-gray-500 dark:text-gray-300"
+				/>
+				<div className="flex flex-col p-6">
+					{/* Columns */}
+					<div className="flex justify-start space-x-8">
+						<div>Blog</div>
+						<div>Docs</div>
+						<div>Source</div>
+					</div>
+
+					{/* Single horizontal line under all columns */}
+					<GSeparator orientation="horizontal" className="my-2" />
+				</div>
+
+				<div className="flex flex-col space-y-4 p-6">
+					{["Blog", "Docs", "Source"].map((item, index) => (
+						<div key={index} className="flex flex-col items-start">
+							<div className="text-left">{item}</div>
+							<GSeparator
+								orientation="horizontal"
+								className="w-12 h-px bg-gray-400 my-1"
+							/>
+						</div>
+					))}
 				</div>
 			</DashboardLayout>
 		</div>
