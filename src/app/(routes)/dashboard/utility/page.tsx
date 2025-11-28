@@ -1,12 +1,19 @@
 "use client";
 
 import DashboardLayout from "@/app/common/dashboard_layout/layout/DashboardLayout";
+import GBreadcrumb, { BreadcrumbRoute } from "@/app/common/ui/GBreadCrumb";
 import GClipboardButton from "@/app/common/utility/GClipboardButton";
 import GProgress from "@/app/common/utility/GProgress";
 import GSectionHeader from "@/app/common/utility/GSectionHeader";
 import GSeparator from "@/app/common/utility/GSeparator";
 import GSwitch from "@/app/common/utility/GSwitch";
 import { useState } from "react";
+
+const breadcrumbItems: BreadcrumbRoute[] = [
+	{ label: "Home", href: "/" },
+	{ label: "Components", href: "/components" },
+	{ label: "Breadcrumb" },
+];
 
 const page = () => {
 	const [enabled, setEnabled] = useState(false);
@@ -105,6 +112,18 @@ const page = () => {
 							/>
 						</div>
 					))}
+				</div>
+
+				<GSectionHeader
+					title="Breadcrumb"
+					// subtitle="Last 30 orders in the system"
+					// className="mb-6"
+					titleClass="text-xl font-bold"
+					subtitleClass="text-gray-500 dark:text-gray-300"
+				/>
+
+				<div className="p-6">
+					<GBreadcrumb items={breadcrumbItems} />
 				</div>
 			</DashboardLayout>
 		</div>

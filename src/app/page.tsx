@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import GAlertDialog from "./common/ui/GAlertDialog";
-import GBreadcrumb, { BreadcrumbRoute } from "./common/ui/GBreadCrumb";
 import GCheckbox from "./common/ui/GCheckbox";
 import GCombobox, { ComboboxOption } from "./common/ui/GCombobox";
 import GDatePicker from "./common/ui/GDatePicker";
@@ -24,12 +23,6 @@ const fruitOptions: SelectOption[] = [
 	{ label: "Blueberry", value: "blueberry" },
 	{ label: "Grapes", value: "grapes" },
 	{ label: "Pineapple", value: "pineapple" },
-];
-
-const breadcrumbItems: BreadcrumbRoute[] = [
-	{ label: "Home", href: "/" },
-	{ label: "Components", href: "/components" },
-	{ label: "Breadcrumb" }, // current page
 ];
 
 export default function Home() {
@@ -77,9 +70,7 @@ export default function Home() {
 					onClear={() => setFruit("")}
 				/>
 			</div>
-			<div className="p-6">
-				<GBreadcrumb items={breadcrumbItems} />
-			</div>
+
 			<div className="p-6">
 				<GTooltipButton
 					variant="outline"
