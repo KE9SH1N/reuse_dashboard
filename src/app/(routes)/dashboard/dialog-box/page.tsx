@@ -5,7 +5,7 @@ import GAlertDialog from "@/app/common/ui/GAlertDialog";
 const page = () => {
 	return (
 		<DashboardLayout>
-			<div className="p-6">
+			<div className=" flex gap-x-5 p-6">
 				<GAlertDialog
 					triggerLabel="Hello Alert Dialog!"
 					title="Delete this user?"
@@ -18,8 +18,7 @@ const page = () => {
 					cancelButtonClassName="bg-gray-100 text-gray-700 dark:hover:text-black hover:bg-gray-200"
 					confirmButtonClassName="bg-red-600 text-white hover:bg-red-700"
 				/>
-			</div>
-			<div className="p-6 ">
+
 				<GAlertDialog
 					triggerLabel="Delete"
 					title="Delete this user?"
