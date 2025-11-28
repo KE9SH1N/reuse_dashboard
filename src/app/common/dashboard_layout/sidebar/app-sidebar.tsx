@@ -89,22 +89,9 @@ const data = {
 		},
 		{
 			title: "Models",
-			url: "#",
+			url: "/dashboard/modals",
 			icon: Bot,
-			items: [
-				{
-					title: "Genesis",
-					url: "#",
-				},
-				{
-					title: "Explorer",
-					url: "#",
-				},
-				{
-					title: "Quantum",
-					url: "#",
-				},
-			],
+			items: [],
 		},
 		{
 			title: "Dialog Box",
