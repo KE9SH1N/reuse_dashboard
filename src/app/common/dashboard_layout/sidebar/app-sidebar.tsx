@@ -107,6 +107,13 @@ const data = {
 			],
 		},
 		{
+			title: "Dialog Box",
+			url: "/dashboard/dialog-box",
+			icon: SquareTerminal,
+			isActive: true,
+			items: [],
+		},
+		{
 			title: "Toaster",
 			url: "/dashboard/toaster",
 			icon: SquareTerminal,
