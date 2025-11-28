@@ -1,12 +1,10 @@
 "use client";
 
-import { ModeToggle } from "@/app/common/components/layout/ModeToggle";
+import { ModeToggle } from "@/app/common/layout/ModeToggle";
+import GBreadcrumb, { BreadcrumbRoute } from "@/app/common/ui/GBreadCrumb";
 import { Separator } from "@/components/ui/separator";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { usePathname } from "next/navigation";
-import GBreadcrumb, {
-	BreadcrumbRoute,
-} from "../../common/components/ui/GBreadCrumb";
 
 const DashboardHeader = () => {
 	const pathname = usePathname(); // e.g. "/dashboard/users/123"

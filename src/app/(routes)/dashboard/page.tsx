@@ -1,4 +1,4 @@
-import DashboardLayout from "@/app/dashboard/layout/DashboardLayout";
+import DashboardLayout from "@/app/common/dashboard_layout/layout/DashboardLayout";
 
 const page = () => {
 	return (

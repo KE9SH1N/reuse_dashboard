@@ -1,8 +1,9 @@
 "use client";
-import ReactTableV1 from "@/app/dtable/components/ReactTableV1";
+
 import { usePagination } from "@/hooks/custom-hooks/usePaginationHandlers";
 import { ColumnDef } from "@tanstack/react-table";
 import { useState } from "react";
+import ReactTableV1 from "./ReactTableV1";
 type User = {
 	id: string;
 	name: string;

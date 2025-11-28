@@ -1,9 +1,10 @@
 "use client";
-import GClipboardButton from "@/app/common/components/utility/GClipboardButton";
-import GProgress from "@/app/common/components/utility/GProgress";
-import GSectionHeader from "@/app/common/components/utility/GSectionHeader";
-import GSwitch from "@/app/common/components/utility/GSwitch";
-import DashboardLayout from "@/app/dashboard/layout/DashboardLayout";
+
+import DashboardLayout from "@/app/common/dashboard_layout/layout/DashboardLayout";
+import GClipboardButton from "@/app/common/utility/GClipboardButton";
+import GProgress from "@/app/common/utility/GProgress";
+import GSectionHeader from "@/app/common/utility/GSectionHeader";
+import GSwitch from "@/app/common/utility/GSwitch";
 import { useState } from "react";
 
 const page = () => {

@@ -1,20 +1,17 @@
 "use client";
 import { showToast } from "@/lib/toast.util";
 import { useState } from "react";
-import GAlertDialog from "./common/components/ui/GAlertDialog";
-import GBreadcrumb, {
-	BreadcrumbRoute,
-} from "./common/components/ui/GBreadCrumb";
-import GButton from "./common/components/ui/GButton";
-import GCheckbox from "./common/components/ui/GCheckbox";
-import GCombobox, { ComboboxOption } from "./common/components/ui/GCombobox";
-import GDatePicker from "./common/components/ui/GDatePicker";
-import { default as GLabelInput } from "./common/components/ui/GInput";
-import GRadioGroup from "./common/components/ui/GRadioGroup";
-import GSelect, { SelectOption } from "./common/components/ui/GSelect";
-import GTextArea from "./common/components/ui/GTextArea";
-import GTooltipButton from "./common/components/ui/GTooltipButton";
-import GSeparator from "./common/components/utility/GSeparator";
+import GAlertDialog from "./common/ui/GAlertDialog";
+import GBreadcrumb, { BreadcrumbRoute } from "./common/ui/GBreadCrumb";
+import GButton from "./common/ui/GButton";
+import GCheckbox from "./common/ui/GCheckbox";
+import GCombobox, { ComboboxOption } from "./common/ui/GCombobox";
+import GDatePicker from "./common/ui/GDatePicker";
+import GRadioGroup from "./common/ui/GRadioGroup";
+import GSelect, { SelectOption } from "./common/ui/GSelect";
+import GTextArea from "./common/ui/GTextArea";
+import GTooltipButton from "./common/ui/GTooltipButton";
+import GSeparator from "./common/utility/GSeparator";
 
 const frameworkOptions: ComboboxOption[] = [
 	{ label: "Next.js", value: "next.js" },
@@ -128,22 +125,7 @@ export default function Home() {
 					Loading...
 				</GButton>
 			</div>
-			<div className="mt-5 p-6">
-				<GLabelInput
-					id="email"
-					name="dynamicName"
-					type="email"
-					label="Email"
-					placeholder="Enter your email"
-					className="bg-white text-black"
-					labelClass="text-white"
-					required={true}
-					error=""
-					onChange={(e) => {
-						console.log(e.target.value);
-					}}
-				/>
-			</div>
+
 			<div className="p-6">
 				<GDatePicker
 					label="Select your birth date"

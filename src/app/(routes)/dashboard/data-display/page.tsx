@@ -1,9 +1,10 @@
 "use client";
-import GAvatar from "@/app/common/components/data-display/GAvatar";
-import GBadge from "@/app/common/components/data-display/GBadge";
-import GPill from "@/app/common/components/data-display/GPill";
-import GSectionHeader from "@/app/common/components/utility/GSectionHeader";
-import DashboardLayout from "@/app/dashboard/layout/DashboardLayout";
+
+import DashboardLayout from "@/app/common/dashboard_layout/layout/DashboardLayout";
+import GAvatar from "@/app/common/data-display/GAvatar";
+import GBadge from "@/app/common/data-display/GBadge";
+import GPill from "@/app/common/data-display/GPill";
+import GSectionHeader from "@/app/common/utility/GSectionHeader";
 import { AlertCircleIcon, CheckIcon } from "lucide-react";
 
 const page = () => {
