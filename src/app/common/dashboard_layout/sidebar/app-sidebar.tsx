@@ -108,15 +108,10 @@ const data = {
 		},
 		{
 			title: "Toaster",
-			url: "#",
+			url: "/dashboard/toaster",
 			icon: SquareTerminal,
 			isActive: true,
-			items: [
-				{
-					title: "Table",
-					url: "#",
-				},
-			],
+			items: [],
 		},
 		{
 			title: "Utility",
