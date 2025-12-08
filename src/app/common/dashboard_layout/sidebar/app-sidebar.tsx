@@ -61,6 +61,10 @@ const data = {
 					title: "Input",
 					url: "/dashboard/ui/inputs",
 				},
+				{
+					title: "Button",
+					url: "/dashboard/ui/buttons",
+				},
 			],
 		},
 		{

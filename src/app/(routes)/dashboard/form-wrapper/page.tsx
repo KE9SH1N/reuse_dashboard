@@ -112,11 +112,19 @@ const page = () => {
 					isRequired={false}
 					type="number"
 				/>
-
-				<Button type="submit">Submit</Button>
-				<Button type="button" variant="outline" onClick={handleClearForm}>
-					Clear
-				</Button>
+				<div className="flex items-start justify-start gap-x-2">
+					<Button size={"sm"} type="submit">
+						Submit
+					</Button>
+					<Button
+						size={"sm"}
+						type="button"
+						variant="outline"
+						onClick={handleClearForm}
+					>
+						Clear
+					</Button>
+				</div>
 			</GFormWrapper>
 
 			{data && (

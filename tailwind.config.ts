@@ -71,6 +71,17 @@ const config: Config = {
 				sm: "0.875rem", // ~11px, smaller text
 				lg: "1.125rem", // ~15.75px, slightly bigger than max (you can keep it or adjust)
 			},
+			keyframes: {
+				circleMove: {
+					"0%": { transform: "rotate(0deg) translateX(3px) rotate(0deg)" },
+					"100%": {
+						transform: "rotate(360deg) translateX(3px) rotate(-360deg)",
+					},
+				},
+			},
+			animation: {
+				"circle-move": "circleMove 1s linear infinite",
+			},
 		},
 	},
 	plugins: [require("tailwindcss-animate")],
