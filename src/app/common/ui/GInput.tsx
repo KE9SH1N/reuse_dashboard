@@ -12,7 +12,7 @@ interface GInputProps {
 	className?: string;
 	type?: "text" | "email" | "password" | "number" | "search"; // You can add more if needed
 	placeholder?: string;
-	value?: string;
+	value?: string | number | readonly string[] | undefined | null;
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	disabled?: boolean;
 	readOnly?: boolean;
@@ -40,9 +40,7 @@ const GInput = ({
 	autoComplete,
 }: GInputProps) => {
 	return (
-		<div
-			className={cn("grid w-full max-w-sm items-center gap-2", wrapperClass)}
-		>
+		<div className={cn("grid w-full items-center gap-2", wrapperClass)}>
 			{label && (
 				<Label htmlFor={id} className={cn("text-sm font-medium", labelClass)}>
 					{label}
@@ -52,7 +50,7 @@ const GInput = ({
 				id={id}
 				type={type}
 				name={name}
-				value={value}
+				value={value ?? ""}
 				onChange={onChange}
 				placeholder={placeholder}
 				className={cn("", className)}

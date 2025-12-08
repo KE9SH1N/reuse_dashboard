@@ -59,7 +59,7 @@ const data = {
 			items: [
 				{
 					title: "Input",
-					url: "/routes/1",
+					url: "/dashboard/ui/inputs",
 				},
 			],
 		},
@@ -76,16 +76,11 @@ const data = {
 			],
 		},
 		{
-			title: "Form",
-			url: "#",
+			title: "Form Wrapper",
+			url: "/dashboard/form-wrapper",
 			icon: SquareTerminal,
 			isActive: true,
-			items: [
-				{
-					title: "Table",
-					url: "#",
-				},
-			],
+			items: [],
 		},
 		{
 			title: "Models",

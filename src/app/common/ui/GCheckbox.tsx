@@ -29,7 +29,7 @@ const GCheckbox = ({
 			htmlFor={id}
 			className={cn(
 				"flex items-start gap-3 rounded-lg p-3",
-				"has-[[aria-checked=true]]:border-blue-600",
+				"has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-950 has-[[aria-checked=true]]:text-white",
 				"dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950",
 				className
 			)}

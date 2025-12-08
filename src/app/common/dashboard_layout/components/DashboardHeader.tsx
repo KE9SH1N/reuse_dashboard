@@ -11,13 +11,33 @@ const DashboardHeader = () => {
 	const segments = pathname.split("/").filter(Boolean); // ["dashboard", "users", "123"]
 
 	// Build breadcrumb items dynamically
+	// const breadcrumbItems: BreadcrumbRoute[] = segments.map((seg, idx) => {
+	// 	const href = "/" + segments.slice(0, idx + 1).join("/");
+	// 	return {
+	// 		label: seg.charAt(0).toUpperCase() + seg.slice(1), // Capitalize
+	// 		href: idx === segments.length - 1 ? undefined : href, // last item not clickable
+	// 	};
+	// });
+
 	const breadcrumbItems: BreadcrumbRoute[] = segments.map((seg, idx) => {
+		// Remove unwanted characters: -, _, |, /
+		const cleanSeg = seg.replace(/[-_|/]/g, " ");
+
+		// Capitalize first letter of each word
+		const label = cleanSeg
+			.split(" ")
+			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+			.join(" ");
+
 		const href = "/" + segments.slice(0, idx + 1).join("/");
+
 		return {
-			label: seg.charAt(0).toUpperCase() + seg.slice(1), // Capitalize
+			label,
 			href: idx === segments.length - 1 ? undefined : href, // last item not clickable
 		};
 	});
+
+	// console.log("Breadcrumb Items:", breadcrumbItems);
 
 	return (
 		<header className="flex h-16 shrink-0 items-center transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 border-b">
