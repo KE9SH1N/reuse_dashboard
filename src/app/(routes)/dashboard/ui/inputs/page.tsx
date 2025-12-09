@@ -4,6 +4,7 @@ import GCheckbox from "@/app/common/ui/GCheckbox";
 import { ComboboxOption } from "@/app/common/ui/GCombobox";
 import GInput from "@/app/common/ui/GInput";
 import GSelect, { SelectOption } from "@/app/common/ui/GSelect";
+import GSelectWithSearch from "@/app/common/ui/GSelectWithSearch";
 import GTextArea from "@/app/common/ui/GTextArea";
 import GSectionHeader from "@/app/common/utility/GSectionHeader";
 import { useState } from "react";
@@ -16,6 +17,14 @@ const frameworkOptions: ComboboxOption[] = [
 	{ label: "Astro", value: "astro" },
 ];
 
+const fruitOptions: SelectOption[] = [
+	{ label: "Apple", value: "apple" },
+	{ label: "Banana", value: "banana" },
+	{ label: "Blueberry", value: "blueberry" },
+	{ label: "Grapes", value: "grapes" },
+	{ label: "Pineapple", value: "pineapple" },
+];
+
 const page = () => {
 	const [value, setValue] = useState<string>("");
 	const [ageValue, setAgeValue] = useState<number>(0);
@@ -24,6 +33,7 @@ const page = () => {
 	const [selectedComboboxItem, setSelectedComboboxItem] = useState<string>("");
 
 	const [gender, setGender] = useState<string>("");
+	const [genderTwo, setGenderTwo] = useState<string>("");
 
 	const genderOptions: SelectOption[] = [
 		{ label: "Male", value: "1" },
@@ -109,17 +119,30 @@ const page = () => {
 
 					<GSelect
 						options={genderOptions}
-						value={gender}
-						onChange={(val) => setGender(val)}
-						onClear={() => setGender("")}
+						value={genderTwo}
+						onChange={(val) => setGenderTwo(val)}
+						onClear={() => setGenderTwo("")}
 						placeholder="Select gender"
 						className="w-full"
 					/>
 
 					<p className="text-sm">
 						Selected value:{" "}
-						<span className="font-semibold">{gender || "None"}</span>
+						<span className="font-semibold">{genderTwo || "None"}</span>
 					</p>
+				</div>
+
+				<div className="mt-6 space-y-4">
+					<h2 className="text-xl font-semibold">Select Example With Search</h2>
+					<GSelectWithSearch
+						options={fruitOptions}
+						value={gender}
+						onChange={setGender}
+						placeholder="Select gender"
+						className="w-full"
+					/>
+
+					<p className="mt-4">Selected: {gender || "None"}</p>
 				</div>
 			</div>
 		</DashboardLayout>
