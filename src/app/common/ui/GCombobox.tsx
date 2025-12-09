@@ -55,14 +55,35 @@ const GCombobox: React.FC<GComboboxProps> = ({
 					role="combobox"
 					aria-expanded={open}
 					disabled={disabled}
-					className={cn("w-[200px] justify-between text-black", className)}
+					className={cn(
+						"w-[200px] justify-between text-black relative pr-10",
+						className
+					)}
 				>
+					{/* Left label */}
 					{value
 						? options?.find((item) => item.value === value)?.label
 						: placeholder}
-					<ChevronsUpDown className="h-4 w-4 shrink-0 opacity-50 text-black" />
+
+					{/* RIGHT SIDE ICONS */}
+					<div className="flex items-center absolute right-2 gap-1">
+						{/* CLEAR (X) BUTTON — visible only when selected */}
+						{value && (
+							<Check
+								onClick={(e) => {
+									e.stopPropagation(); // prevents opening dropdown
+									onChange?.(""); // reset value
+								}}
+								className="h-4 w-4 cursor-pointer text-red-500"
+							/>
+						)}
+
+						{/* CHEVRON ICON */}
+						<ChevronsUpDown className="h-4 w-4 opacity-50 text-black" />
+					</div>
 				</Button>
 			</PopoverTrigger>
+
 			<PopoverContent className="w-[200px] p-0">
 				<Command>
 					<CommandInput placeholder={inputPlaceholder} className="h-9" />

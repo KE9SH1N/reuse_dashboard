@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import {
 	Select,
 	SelectContent,
@@ -53,32 +52,30 @@ const GSelect: React.FC<GSelectProps> = ({
 
 	return (
 		<Select value={value} onValueChange={onChange} disabled={disabled}>
-			<SelectTrigger className={cn("w-[300px] ", className)}>
-				<SelectValue placeholder={placeholder} className="truncate " />
-
-				{/* Right side container */}
-				<div className="w-[180px] space-x-2 ">
+			<SelectTrigger className={cn("w-[300px] relative", className)}>
+				<SelectValue placeholder={placeholder} className="truncate" />
+				<div>
+					{/* Clear Icon (Right side before dropdown arrow) */}
 					{value && (
-						<div className="relative flex items-center justify-end z-40">
-							<Button
-								variant="ghost"
-								size="sm"
-								onPointerDown={(e) => {
-									e.preventDefault();
-									e.stopPropagation();
-									handleClear(e);
-								}}
-								aria-label="Clear selection"
-								className="p-0 hover:bg-transparent focus:ring-0 focus:ring-offset-0"
-							>
-								<X className="h-4 w-4 mr-3 text-white dark:text-gray-300" />
-							</Button>
-							<span className="select-none text-white dark:text-gray-500">
-								|
-							</span>
-						</div>
+						<button
+							onPointerDown={(e) => {
+								e.preventDefault();
+								e.stopPropagation();
+								handleClear(e);
+							}}
+							className="absolute right-8 top-1/2 -translate-y-1/2 p-1"
+						>
+							<p className=" flex items-center justify-center gap-2">
+								<X className="h-4 w-4 text-black dark:text-white " />
+								<span className="select-none dark:text-white text-black">
+									|
+								</span>
+							</p>
+						</button>
 					)}
 				</div>
+
+				{/* Keep dropdown arrow untouched (shadcn default) */}
 			</SelectTrigger>
 
 			<SelectContent>

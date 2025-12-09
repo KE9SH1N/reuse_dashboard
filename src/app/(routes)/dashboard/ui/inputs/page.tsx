@@ -1,16 +1,35 @@
 "use client";
 import DashboardLayout from "@/app/common/dashboard_layout/layout/DashboardLayout";
 import GCheckbox from "@/app/common/ui/GCheckbox";
+import { ComboboxOption } from "@/app/common/ui/GCombobox";
 import GInput from "@/app/common/ui/GInput";
+import GSelect, { SelectOption } from "@/app/common/ui/GSelect";
 import GTextArea from "@/app/common/ui/GTextArea";
 import GSectionHeader from "@/app/common/utility/GSectionHeader";
 import { useState } from "react";
+
+const frameworkOptions: ComboboxOption[] = [
+	{ label: "Next.js", value: "next.js" },
+	{ label: "SvelteKit", value: "sveltekit" },
+	{ label: "Nuxt.js", value: "nuxt.js" },
+	{ label: "Remix", value: "remix" },
+	{ label: "Astro", value: "astro" },
+];
 
 const page = () => {
 	const [value, setValue] = useState<string>("");
 	const [ageValue, setAgeValue] = useState<number>(0);
 	const [text, setText] = useState<string>("");
 	const [accepted, setAccepted] = useState<boolean>(false);
+	const [selectedComboboxItem, setSelectedComboboxItem] = useState<string>("");
+
+	const [gender, setGender] = useState<string>("");
+
+	const genderOptions: SelectOption[] = [
+		{ label: "Male", value: "1" },
+		{ label: "Female", value: "2" },
+		{ label: "Other", value: "3" },
+	];
 	return (
 		<DashboardLayout>
 			<GSectionHeader
@@ -84,6 +103,24 @@ const page = () => {
 					disabled={false}
 					className="mt-4"
 				/>
+
+				<div className=" space-y-4">
+					<h2 className="text-xl font-semibold">Select Example</h2>
+
+					<GSelect
+						options={genderOptions}
+						value={gender}
+						onChange={(val) => setGender(val)}
+						onClear={() => setGender("")}
+						placeholder="Select gender"
+						className="w-full"
+					/>
+
+					<p className="text-sm">
+						Selected value:{" "}
+						<span className="font-semibold">{gender || "None"}</span>
+					</p>
+				</div>
 			</div>
 		</DashboardLayout>
 	);
