@@ -2,6 +2,7 @@
 import DashboardLayout from "@/app/common/dashboard_layout/layout/DashboardLayout";
 import GCheckbox from "@/app/common/ui/GCheckbox";
 import { ComboboxOption } from "@/app/common/ui/GCombobox";
+import GDatePicker from "@/app/common/ui/GDatePicker";
 import GInput from "@/app/common/ui/GInput";
 import GSelect, { SelectOption } from "@/app/common/ui/GSelect";
 import GSelectWithSearch from "@/app/common/ui/GSelectWithSearch";
@@ -34,6 +35,7 @@ const page = () => {
 
 	const [gender, setGender] = useState<string>("");
 	const [genderTwo, setGenderTwo] = useState<string>("");
+	const [date, setDate] = useState<Date | undefined>(undefined);
 
 	const genderOptions: SelectOption[] = [
 		{ label: "Male", value: "1" },
@@ -143,6 +145,24 @@ const page = () => {
 					/>
 
 					<p className="mt-4">Selected: {gender || "None"}</p>
+				</div>
+
+				<div className="mt-6 space-y-4">
+					<GDatePicker
+						label="Select Your Birth Date"
+						value={date}
+						onChange={(d) => setDate(d)}
+						description="Please pick a valid date."
+						className="w-full"
+						disabledDates={undefined}
+						// disabledDates={(day) => day > new Date()} // Disable future dates
+					/>
+
+					<div>
+						<p className="text-sm">
+							Selected: {date ? date.toDateString() : "None"}
+						</p>
+					</div>
 				</div>
 			</div>
 		</DashboardLayout>

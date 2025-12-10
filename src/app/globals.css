@@ -87,3 +87,14 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+@layer components {
+	.calendar-fix .rdp {
+		width: 100% !important;
+		min-width: unset !important;
+	}
+
+	.calendar-fix .rdp-table {
+		width: 100% !important;
+	}
+}
