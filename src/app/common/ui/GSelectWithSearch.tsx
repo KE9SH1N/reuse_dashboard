@@ -31,6 +31,7 @@ interface GSelectWithSearchProps {
 	placeholder?: string;
 	disabled?: boolean;
 	className?: string;
+	popoverContentClassName?: string;
 }
 
 const GSelectWithSearch: React.FC<GSelectWithSearchProps> = ({
@@ -40,6 +41,7 @@ const GSelectWithSearch: React.FC<GSelectWithSearchProps> = ({
 	placeholder = "Select an option",
 	disabled = false,
 	className,
+	popoverContentClassName,
 }) => {
 	const [open, setOpen] = useState(false);
 
@@ -89,7 +91,7 @@ const GSelectWithSearch: React.FC<GSelectWithSearchProps> = ({
 				</button>
 			</PopoverTrigger>
 
-			<PopoverContent className="w-[300px] px-0">
+			<PopoverContent className={`w-[300px] ${popoverContentClassName} px-0`}>
 				<Command>
 					{/* Search box */}
 					<CommandInput placeholder="Search..." />

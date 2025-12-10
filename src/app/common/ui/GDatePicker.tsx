@@ -22,6 +22,7 @@ interface DatePickerProps {
 	disabledDates?: (date: Date) => boolean;
 	description?: string;
 	className?: string;
+	popoverContentClassName?: string;
 }
 
 const GDatePicker = ({
@@ -31,6 +32,7 @@ const GDatePicker = ({
 	disabledDates,
 	description,
 	className,
+	popoverContentClassName,
 }: DatePickerProps) => {
 	const [open, setOpen] = React.useState(false);
 
@@ -86,7 +88,10 @@ const GDatePicker = ({
 				</PopoverTrigger>
 
 				{/* Fix Mac Chrome dropdown stretching */}
-				<PopoverContent className="w-[300px] p-0" align="center">
+				<PopoverContent
+					className={`${popoverContentClassName} w-[300px] p-0`}
+					align="center"
+				>
 					<div className="calendar-fix">
 						<Calendar
 							mode="single"
