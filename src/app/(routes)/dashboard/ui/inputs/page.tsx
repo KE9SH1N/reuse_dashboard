@@ -186,7 +186,7 @@ const page = () => {
 							onChange={setGender}
 							placeholder="Select gender"
 							className="w-full"
-							popoverContentClassName="!w-[300px]"
+							popoverContentClassName="!w-[250px]"
 						/>
 					</div>
 				</div>
