@@ -89,7 +89,7 @@ const GSelectWithSearch: React.FC<GSelectWithSearchProps> = ({
 				</button>
 			</PopoverTrigger>
 
-			<PopoverContent className="w-[290px] px-0">
+			<PopoverContent className="w-[300px] px-0">
 				<Command>
 					{/* Search box */}
 					<CommandInput placeholder="Search..." />

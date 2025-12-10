@@ -51,7 +51,7 @@ const page = () => {
 				titleClass="text-xl font-bold"
 				subtitleClass="text-gray-500 dark:text-gray-300"
 			/>
-			<div className="max-w-sm">
+			<div className="max-w-[300px]">
 				<GInput
 					id="user-name-input" // required
 					label="Username" // optional label
