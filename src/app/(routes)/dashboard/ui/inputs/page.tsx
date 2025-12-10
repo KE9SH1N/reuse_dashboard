@@ -126,6 +126,7 @@ const page = () => {
 						onClear={() => setGenderTwo("")}
 						placeholder="Select gender"
 						className="w-full"
+						popoverContentClassName="!w-[300px]"
 					/>
 
 					<p className="text-sm">
@@ -142,6 +143,7 @@ const page = () => {
 						onChange={setGender}
 						placeholder="Select gender"
 						className="w-full"
+						popoverContentClassName="!w-[300px]"
 					/>
 
 					<p className="mt-4">Selected: {gender || "None"}</p>
@@ -162,6 +164,26 @@ const page = () => {
 						<p className="text-sm">
 							Selected: {date ? date.toDateString() : "None"}
 						</p>
+					</div>
+				</div>
+				<div className="w-[250px]">
+					{/* parent width */}
+					<div className="mt-6 space-y-4">
+						<GDatePicker
+							label="Block Future Dates"
+							value={date}
+							onChange={(d) => setDate(d)}
+							description="Please pick a valid date."
+							className="w-full" //input field width
+							popoverContentClassName="!w-[250px]" //same as the parent width so that the body width will match
+							disabledDates={(day) => day > new Date()} // Disable future dates
+						/>
+
+						<div>
+							<p className="text-sm">
+								Selected: {date ? date.toDateString() : "None"}
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

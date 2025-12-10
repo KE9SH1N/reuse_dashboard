@@ -119,6 +119,7 @@ interface GSelectProps {
 	disabled?: boolean;
 	className?: string;
 	onClear?: () => void;
+	popoverContentClassName?: string;
 }
 
 const GSelect: React.FC<GSelectProps> = ({
@@ -129,6 +130,7 @@ const GSelect: React.FC<GSelectProps> = ({
 	disabled = false,
 	className,
 	onClear,
+	popoverContentClassName,
 }) => {
 	const [open, setOpen] = React.useState(false);
 
@@ -179,12 +181,12 @@ const GSelect: React.FC<GSelectProps> = ({
 				</button>
 			</PopoverTrigger>
 
-			<PopoverContent className="w-[300px] p-1">
+			<PopoverContent className={`w-[300px] ${popoverContentClassName}`}>
 				<div className="max-h-[200px] overflow-y-auto">
 					{options.map((option) => (
 						<div
 							key={option.value}
-							className="px-3 py-2 cursor-pointer hover:bg-accent rounded-sm"
+							className="px-2 py-1 cursor-pointer hover:bg-accent rounded-sm"
 							onClick={() => {
 								onChange?.(option.value);
 								setOpen(false);
