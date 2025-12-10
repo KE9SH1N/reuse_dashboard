@@ -86,7 +86,7 @@ const GDatePicker = ({
 				</PopoverTrigger>
 
 				{/* Fix Mac Chrome dropdown stretching */}
-				<PopoverContent className="min-w-[290px] p-0" align="center">
+				<PopoverContent className="w-[300px] p-0" align="center">
 					<div className="calendar-fix">
 						<Calendar
 							mode="single"

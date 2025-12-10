@@ -179,7 +179,7 @@ const GSelect: React.FC<GSelectProps> = ({
 				</button>
 			</PopoverTrigger>
 
-			<PopoverContent className="w-[290px] p-1">
+			<PopoverContent className="w-[300px] p-1">
 				<div className="max-h-[200px] overflow-y-auto">
 					{options.map((option) => (
 						<div
