@@ -97,7 +97,7 @@ const GDatePicker = ({
 							mode="single"
 							selected={value}
 							onSelect={handleSelect}
-							className="w-full"
+							className="w-full rounded-md"
 							// disabled={
 							// 	disabledDates ||
 							// 	((date) => date > new Date() || date < new Date("1900-01-01"))
