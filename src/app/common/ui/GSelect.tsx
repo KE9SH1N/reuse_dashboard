@@ -133,6 +133,7 @@ const GSelect: React.FC<GSelectProps> = ({
 	popoverContentClassName,
 }) => {
 	const [open, setOpen] = React.useState(false);
+	const triggerRef = React.useRef<HTMLButtonElement>(null);
 
 	const selectedLabel =
 		options.find((opt) => opt.value === value)?.label ?? placeholder;
@@ -147,9 +148,10 @@ const GSelect: React.FC<GSelectProps> = ({
 		<Popover open={open} onOpenChange={setOpen}>
 			<PopoverTrigger asChild>
 				<button
+					ref={triggerRef}
 					disabled={disabled}
 					className={cn(
-						"w-[300px] relative flex items-center justify-between border rounded-md px-3 py-[4px] text-left",
+						"w-[300px] relative flex items-center justify-between border rounded-md px-3 py-[4.5px] text-left",
 						"focus:outline-none",
 						className
 					)}
@@ -181,7 +183,10 @@ const GSelect: React.FC<GSelectProps> = ({
 				</button>
 			</PopoverTrigger>
 
-			<PopoverContent className={`w-[300px] ${popoverContentClassName}`}>
+			<PopoverContent
+				className={`${popoverContentClassName}`}
+				style={{ minWidth: triggerRef.current?.offsetWidth }}
+			>
 				<div className="max-h-[200px] overflow-y-auto">
 					{options.map((option) => (
 						<div

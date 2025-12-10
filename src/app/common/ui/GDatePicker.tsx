@@ -34,6 +34,7 @@ const GDatePicker = ({
 	className,
 	popoverContentClassName,
 }: DatePickerProps) => {
+	const triggerRef = React.useRef<HTMLButtonElement>(null);
 	const [open, setOpen] = React.useState(false);
 
 	const handleSelect = (date: Date | undefined) => {
@@ -54,9 +55,10 @@ const GDatePicker = ({
 				<PopoverTrigger asChild>
 					<div className="relative">
 						<Button
+							ref={triggerRef}
 							variant="outline"
 							className={cn(
-								"w-full pl-3 text-left font-normal text-black flex items-center justify-between",
+								"w-full pl-3 py-[13px] text-left font-normal text-black flex items-center justify-between",
 								!value && "text-muted-foreground"
 							)}
 						>
@@ -89,8 +91,9 @@ const GDatePicker = ({
 
 				{/* Fix Mac Chrome dropdown stretching */}
 				<PopoverContent
-					className={`${popoverContentClassName} w-[300px] p-0`}
+					className={`${popoverContentClassName} p-0`}
 					align="center"
+					style={{ minWidth: triggerRef.current?.offsetWidth }}
 				>
 					<div className="calendar-fix">
 						<Calendar

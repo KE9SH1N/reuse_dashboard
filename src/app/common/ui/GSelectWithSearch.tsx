@@ -14,7 +14,7 @@ import {
 	PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import React, { useState } from "react";
 import { GoTriangleDown } from "react-icons/go";
 import { IoCloseSharp } from "react-icons/io5";
 import { RxDividerVertical } from "react-icons/rx";
@@ -43,6 +43,8 @@ const GSelectWithSearch: React.FC<GSelectWithSearchProps> = ({
 	className,
 	popoverContentClassName,
 }) => {
+	const triggerRef = React.useRef<HTMLButtonElement>(null);
+
 	const [open, setOpen] = useState(false);
 
 	const selectedLabel =
@@ -57,6 +59,7 @@ const GSelectWithSearch: React.FC<GSelectWithSearchProps> = ({
 		<Popover open={open} onOpenChange={setOpen}>
 			<PopoverTrigger asChild>
 				<button
+					ref={triggerRef}
 					disabled={disabled}
 					className={cn(
 						"w-[300px] relative flex items-center justify-between border rounded-md px-3 py-[4px] text-left",
@@ -91,7 +94,10 @@ const GSelectWithSearch: React.FC<GSelectWithSearchProps> = ({
 				</button>
 			</PopoverTrigger>
 
-			<PopoverContent className={`w-[300px] ${popoverContentClassName} px-0`}>
+			<PopoverContent
+				className={`${popoverContentClassName} px-0`}
+				style={{ minWidth: triggerRef.current?.offsetWidth }}
+			>
 				<Command>
 					{/* Search box */}
 					<CommandInput placeholder="Search..." />
