@@ -166,11 +166,11 @@ const page = () => {
 						</p>
 					</div>
 				</div>
-				<div className="w-[250px]">
+				<div className="w-[600px] flex items-start justify-start gap-x-2">
 					{/* parent width */}
-					<div className="mt-6 space-y-4">
+					<div className="w-[250px] mt-6 space-y-4">
 						<GDatePicker
-							label="Block Future Dates"
+							label=""
 							value={date}
 							onChange={(d) => setDate(d)}
 							description="Please pick a valid date."
@@ -178,12 +178,16 @@ const page = () => {
 							popoverContentClassName="!w-[250px]" //same as the parent width so that the body width will match
 							disabledDates={(day) => day > new Date()} // Disable future dates
 						/>
-
-						<div>
-							<p className="text-sm">
-								Selected: {date ? date.toDateString() : "None"}
-							</p>
-						</div>
+					</div>
+					<div className="w-[250px] mt-6 space-y-4">
+						<GSelectWithSearch
+							options={fruitOptions}
+							value={gender}
+							onChange={setGender}
+							placeholder="Select gender"
+							className="w-full"
+							popoverContentClassName="!w-[300px]"
+						/>
 					</div>
 				</div>
 			</div>
