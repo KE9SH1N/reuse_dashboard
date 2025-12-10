@@ -59,7 +59,7 @@ const GSelectWithSearch: React.FC<GSelectWithSearchProps> = ({
 				<button
 					disabled={disabled}
 					className={cn(
-						"w-[300px] relative flex items-center justify-between border rounded-md px-3 py-1 text-left",
+						"w-[300px] relative flex items-center justify-between border rounded-md px-3 py-[4px] text-left",
 						"focus:outline-none",
 						className
 					)}
