@@ -122,8 +122,8 @@ const data = {
 			icon: Settings2,
 			items: [
 				{
-					title: "General",
-					url: "#",
+					title: "Grid Layout",
+					url: "/dashboard/settings/grid-layout",
 				},
 			],
 		},

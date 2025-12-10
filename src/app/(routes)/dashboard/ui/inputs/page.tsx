@@ -51,6 +51,62 @@ const page = () => {
 				titleClass="text-xl font-bold"
 				subtitleClass="text-gray-500 dark:text-gray-300"
 			/>
+
+			<div className="grid grid-cols-12 gap-1">
+				<div className="col-span-3">
+					<GInput
+						id="user-name-input" // required
+						// label="Username" // optional label
+						labelClass="" // custom label class
+						wrapperClass="" // wrapper div styles
+						className="" // input element class
+						type="text" // input type
+						placeholder="Enter username" // placeholder
+						value={value} // controlled value
+						onChange={(e) => setValue(e.target.value)} // onChange handler
+						disabled={false} // allow typing
+						readOnly={false} // input is editable
+						error={value.length < 3 ? "Username must be at least 3 chars" : ""} // error message
+						required={true} // adds a required flag
+						name="username" // name attribute for forms
+						autoComplete="off" // disable autocomplete
+					/>
+				</div>
+
+				<div className="col-span-3">
+					<GSelectWithSearch
+						options={fruitOptions}
+						value={gender}
+						onChange={setGender}
+						placeholder="Select gender"
+						className="w-full"
+						popoverContentClassName="!w-full"
+					/>
+				</div>
+				<div className="col-span-3">
+					<GDatePicker
+						// label="Select Your Birth Date"
+						value={date}
+						onChange={(d) => setDate(d)}
+						// description="Please pick a valid date."
+						className="w-full"
+						disabledDates={undefined}
+						// disabledDates={(day) => day > new Date()} // Disable future dates
+					/>
+				</div>
+
+				<div className="col-span-3">
+					<GSelect
+						options={genderOptions}
+						value={genderTwo}
+						onChange={(val) => setGenderTwo(val)}
+						onClear={() => setGenderTwo("")}
+						placeholder="Select gender"
+						className="w-full"
+						popoverContentClassName="!w-[300px]"
+					/>
+				</div>
+			</div>
 			<div className="max-w-[300px]">
 				<GInput
 					id="user-name-input" // required
