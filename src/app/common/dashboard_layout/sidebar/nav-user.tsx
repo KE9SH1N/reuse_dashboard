@@ -1,13 +1,6 @@
 "use client";
 
-import {
-	BadgeCheck,
-	Bell,
-	ChevronsUpDown,
-	CreditCard,
-	LogOut,
-	Sparkles,
-} from "lucide-react";
+import { ChevronsUpDown, LogOut } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -25,6 +18,7 @@ import {
 	SidebarMenuItem,
 	useSidebar,
 } from "@/components/ui/sidebar";
+import { FaUserSecret } from "react-icons/fa";
 
 export function NavUser({
 	user,
@@ -78,12 +72,12 @@ export function NavUser({
 						<DropdownMenuSeparator />
 						<DropdownMenuGroup>
 							<DropdownMenuItem>
-								<Sparkles />
-								Upgrade to Pro
+								<FaUserSecret />
+								Profile
 							</DropdownMenuItem>
 						</DropdownMenuGroup>
 						<DropdownMenuSeparator />
-						<DropdownMenuGroup>
+						{/* <DropdownMenuGroup>
 							<DropdownMenuItem>
 								<BadgeCheck />
 								Account
@@ -96,7 +90,7 @@ export function NavUser({
 								<Bell />
 								Notifications
 							</DropdownMenuItem>
-						</DropdownMenuGroup>
+						</DropdownMenuGroup> */}
 						<DropdownMenuSeparator />
 						<DropdownMenuItem>
 							<LogOut />
