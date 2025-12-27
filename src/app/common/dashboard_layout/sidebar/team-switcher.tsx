@@ -4,11 +4,6 @@ import * as React from "react";
 
 import {
 	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuLabel,
-	DropdownMenuSeparator,
-	DropdownMenuShortcut,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
@@ -17,7 +12,6 @@ import {
 	SidebarMenuItem,
 	useSidebar,
 } from "@/components/ui/sidebar";
-import { ChevronsUpDown } from "lucide-react";
 
 export function TeamSwitcher({
 	teams,
@@ -54,10 +48,10 @@ export function TeamSwitcher({
 									<span className="truncate font-medium">DASHBOARD</span>
 								</Link> */}
 							</div>
-							<ChevronsUpDown className="ml-auto" />
+							{/* <ChevronsUpDown className="ml-auto" /> */}
 						</SidebarMenuButton>
 					</DropdownMenuTrigger>
-					<DropdownMenuContent
+					{/* <DropdownMenuContent
 						className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
 						align="start"
 						side={isMobile ? "bottom" : "right"}
@@ -80,13 +74,13 @@ export function TeamSwitcher({
 							</DropdownMenuItem>
 						))}
 						<DropdownMenuSeparator />
-						{/* <DropdownMenuItem className="gap-2 p-2">
+						<DropdownMenuItem className="gap-2 p-2">
 							<div className="flex size-6 items-center justify-center rounded-md border bg-transparent">
 								<Plus className="size-4" />
 							</div>
 							<div className="text-muted-foreground font-medium">Add team</div>
-						</DropdownMenuItem> */}
-					</DropdownMenuContent>
+						</DropdownMenuItem>
+					</DropdownMenuContent> */}
 				</DropdownMenu>
 			</SidebarMenuItem>
 		</SidebarMenu>
