@@ -117,6 +117,10 @@ const page = () => {
 				>
 					Test Loading
 				</GButton>
+
+				<button className="border-2 p-1 text-xs border-black dark:border-white active:translate-x-[2px] active:translate-y-[2px]">
+					START
+				</button>
 			</div>
 		</DashboardLayout>
 	);

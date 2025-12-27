@@ -113,6 +113,10 @@ const data = {
 					title: "Grid Layout",
 					url: "/dashboard/settings/grid-layout",
 				},
+				{
+					title: "Login Layout",
+					url: "/dashboard/settings/login",
+				},
 			],
 		},
 	],
