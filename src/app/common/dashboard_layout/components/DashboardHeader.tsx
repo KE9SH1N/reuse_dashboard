@@ -40,7 +40,7 @@ const DashboardHeader = () => {
 	// console.log("Breadcrumb Items:", breadcrumbItems);
 
 	return (
-		<header className="flex h-16 shrink-0 items-center transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 border-b">
+		<header className="sticky top-0 z-50 flex h-16 shrink-0 items-center transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 border-b bg-background">
 			<div className="flex w-full items-center justify-between px-4">
 				{/* left section */}
 				<div className="flex items-center gap-2">
