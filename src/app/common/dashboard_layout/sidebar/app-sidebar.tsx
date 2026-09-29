@@ -1,9 +1,7 @@
 "use client";
 
 import {
-	AudioWaveform,
 	Bot,
-	Command,
 	GalleryVerticalEnd,
 	Settings2,
 	SquareTerminal,
@@ -24,25 +22,15 @@ import { TeamSwitcher } from "./team-switcher";
 // This is sample data.
 const data = {
 	user: {
-		name: "shadcn",
-		email: "m@example.com",
+		name: "User Name",
+		email: "user@email.com",
 		avatar: "/avatars/shadcn.jpg",
 	},
 	teams: [
 		{
-			name: "Acme Inc",
+			name: "DASHBOARD",
 			logo: GalleryVerticalEnd,
 			plan: "Enterprise",
-		},
-		{
-			name: "Acme Corp.",
-			logo: AudioWaveform,
-			plan: "Startup",
-		},
-		{
-			name: "Evil Corp.",
-			logo: Command,
-			plan: "Free",
 		},
 	],
 	navMain: [
@@ -124,6 +112,10 @@ const data = {
 				{
 					title: "Grid Layout",
 					url: "/dashboard/settings/grid-layout",
+				},
+				{
+					title: "Login Layout",
+					url: "/dashboard/settings/login",
 				},
 			],
 		},
